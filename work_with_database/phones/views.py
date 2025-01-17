@@ -1,3 +1,4 @@
+import phones
 from django.shortcuts import render, redirect
 from Phone.models import Phone
 
@@ -22,5 +23,5 @@ def show_catalog(request):
 
 def show_product(request, slug):
     template = 'product.html'
-    context = {}
+    context = {'phones': phones}
     return render(request, template, context)
